@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form with Map</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Navbar styles */
+        .navbar {
+            background-color: #f8f9fa;
+            padding: 10px 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .navbar-brand img {
+            height: 30px;
+            margin-right: 10px;
+        }
+
+        .navbar-nav .nav-item {
+            margin: 0 10px;
+        }
+
+        .navbar-nav .nav-link {
+            color: #333;
+            text-decoration: none;
+            padding: 5px 10px;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: orange;
+        }
+
+        .btn-orange {
+            background-color: orange;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .btn-orange:hover {
+            background-color: darkorange;
+        }
+
+        /* Main content styles */
+        .main-content {
+            margin-top: 60px; /* Space for fixed navbar */
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            width: 100%;
+            min-height: calc(100vh - 120px); /* Adjust height based on footer height */
+            padding: 1rem;
+            box-sizing: border-box;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            max-width: 1200px; /* Adjust as needed */
+            width: 100%;
+        }
+
+        .form-container {
+            flex: 1;
+            max-width: 600px;
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-container h2 {
+            margin-top: 0;
+            color: orange;
+            text-align: center;
+        }
+
+        .form-container input, .form-container textarea {
+            width: 100%;
+            padding: 0.75rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .form-container button {
+            background-color: orange;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+            display: block;
+            width: 100%;
+        }
+
+        .form-container button:hover {
+            background-color: darkorange;
+        }
+
+        .map-container {
+            flex: 1;
+            max-width: 100%;
+            height: 400px;
+            overflow: hidden; /* Ensure map does not overflow */
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center; /* Center items vertically on small screens */
+            }
+
+            .map-container {
+                height: 300px;
+            }
+        }
+
+        /* Footer styles */
+        .footer {
+            background-color: orange;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            width: 100%;
+        }
+
+        .footer h5 {
+            font-weight: bold;
+        }
+
+        .footer a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="#">
+            <img src="https://img.icons8.com/color/48/000000/restaurant.png" alt="Food Icon">
+            QUICKEAT
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="About.html">About Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Restaurants</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Pages</a></li>
+                <li class="nav-item"><a class="nav-link" href="contactform.html">Contacts</a></li>
+            </ul>
+            <a class="btn-orange ml-lg-3" href="#">ORDER NOW</a>
+        </div>
+    </nav>
+
+    <!-- Main content container -->
+    <div class="main-content">
+        <div class="container">
+            <!-- Form Container -->
+            <div class="form-container">
+                <h2>Contact Us</h2>
+                <form>
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+
+            <!-- Map Container -->
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.319927069787!2d-122.40170168468432!3d37.792279779757605!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085808c00e8f4d3%3A0x60df9c4de3e01280!2s1%20Market%20St%2C%20San%20Francisco%2C%20CA%2094105!5e0!3m2!1sen!2sus!4v1630533445063!5m2!1sen!2sus" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>QUICKEAT</h5>
+                    <p>The Best Restaurants in Your Home</p>
+                    <p>Vitae congue mauris rhoncus aenean. Enim nulla aliquet porttitor lacus luctus accumsan tortor posuere. Tempus egestas sed sed risus pretium quam.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>MENU</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="About.html">About Us</a></li>
+                        <li><a href="#">Restaurants</a></li>
+                        <li><a href="#">Pages</a></li>
+                        <li><a href="contactform.html">Contacts</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>CONTACTS</h5>
+                    <p>1717 Harrison St, San Francisco, CA 94103, United States</p>
+                    <p>Email: quickeat@mail.net</p>
+                    <p>Phone: +1 425 326 16 27</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS

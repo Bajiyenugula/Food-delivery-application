@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equal Height Cards</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Navbar styles */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #f8f9fa;
+            padding: 10px 20px;
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .navbar-brand img {
+            height: 30px;
+            margin-right: 10px;
+        }
+
+        .navbar-nav {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar-nav .nav-item {
+            margin: 0 10px;
+        }
+
+        .navbar-nav .nav-link {
+            color: #333;
+            text-decoration: none;
+            padding: 5px 10px;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: orange;
+        }
+
+        .btn-orange {
+            background-color: orange;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .btn-orange:hover {
+            background-color: darkorange;
+        }
+
+        /* Card container styles */
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            padding: 1rem;
+            justify-content: center;
+        }
+
+        /* Card styles */
+        .card {
+            flex: 1 1 calc(25% - 1rem); /* 4 cards per row with margin */
+            box-sizing: border-box;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: white;
+            transition: background-color 0.3s, transform 0.3s;
+            cursor: pointer;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            height: 300px; /* Fixed height for all cards */
+        }
+
+        /* Image styling */
+        .card img {
+            width: 100%;
+            height: 150px; /* Fixed height to keep images uniform */
+            object-fit: cover; /* Ensure image covers area */
+            border-radius: 8px;
+        }
+
+        /* Card text styles */
+        .card h3 {
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+            color: orange;
+        }
+
+        .card p {
+            margin: 0;
+        }
+
+        /* Hover effect */
+        .card:hover {
+            background-color: orange;
+            color: white;
+            transform: translateY(-5px); /* Slight lift effect */
+        }
+
+        .card:hover h3 {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a class="navbar-brand" href="#">
+            <img src="https://img.icons8.com/color/48/000000/restaurant.png" alt="Food Icon">
+            QUICKEAT
+        </a>
+        <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="About.html">About Us</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Restaurants</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Pages</a></li>
+            <li class="nav-item"><a class="nav-link" href="contactform.html">Contacts</a></li>
+        </ul>
+        <a class="btn-orange" href="#">ORDER NOW</a>
+    </nav>
+
+    <!-- Card container -->
+    <div class="card-container">
+        <!-- Card 1 -->
+        <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR12oE3hXl0oFOxVDsNHrPBnqGNiM4uRE-aPg&s" alt="Free Delivery">
+            <h3>Free Delivery</h3>
+            <p>Cras fermentum odio eu feugiat pretium nibh ipsum. Ut faucibus pulvinar elementum consequat integer enim neque volutpat.</p>
+        </div>
+        <!-- Card 2 -->
+        <div class="card">
+            <img src="https://thumbs.dreamstime.com/b/conceptual-hand-writing-showing-save-your-time-business-photo-showcasing-finding-ways-to-finished-job-quick-conceptual-hand-139665708.jpg" alt="Save Your Time">
+            <h3>Save Your Time</h3>
+            <p>Vulputate dignissim suspendisse in est ante in nibh mauris. Pretium nibh ipsum consequat nisl vel pretium lectus quam id.</p>
+        </div>
+        <!-- Card 3 -->
+        <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPRJDS4wL5_mC6KnvQtXx-tyCBidxIB-BbVw&s" alt="Regular Discounts">
+            <h3>Regular Discounts</h3>
+            <p>Nec tincidunt praesent semper feugiat nibh. Feugiat in ante metus dictum. Sapien nec sagittis aliquam malesuada bibendum arcu.</p>
+        </div>
+        <!-- Card 4 -->
+        <div class="card">
+            <img src="https://bslthemes.com/html/quickeat/assets/img/food-3.jpg" alt="Variety Food">
+            <h3>Variety Food</h3>
+            <p>Molestie a iaculis at erat pellentesque. Pulvinar neque laoreet suspendisse interdum consectetur libero id faucibus nisi.</p>
+        </div>
+    </div>
+
+</br>
+<!-- Footer -->
+<!-- Footer -->
+<footer style="background-color: orange; color: white; padding: 20px 0; width: 100%; position: relative;">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-4" style="text-align: center;">
+                <h5 style="font-weight: bold;">QUICKEAT</h5>
+                <p>The Best Restaurants in Your Home</p>
+                <p>Vitae congue mauris rhoncus aenean. Enim nulla aliquet porttitor lacus luctus accumsan tortor posuere. Tempus egestas sed sed risus pretium quam.</p>
+            </div>
+            <div class="col-12 col-md-4" style="text-align: center;">
+                <h5 style="font-weight: bold;">MENU</h5>
+                <ul style="list-style: none; padding: 0;">
+                    <li><a href="index.html" style="color: white; text-decoration: none;">Home</a></li>
+                    <li><a href="About.html" style="color: white; text-decoration: none;">About Us</a></li>
+                    <li><a href="#" style="color: white; text-decoration: none;">Restaurants</a></li>
+                    <li><a href="#" style="color: white; text-decoration: none;">Pages</a></li>
+                    <li><a href="contactform.html" style="color: white; text-decoration: none;">Contacts</a></li>
+                </ul>
+            </div>
+            <div class="col-12 col-md-4" style="text-align: center;">
+                <h5 style="font-weight: bold;">CONTACTS</h5>
+                <p>1717 Harrison St, San Francisco, CA 94103, United States</p>
+                <p>Email: quickeat@mail.net</p>
+                <p>Phone: +1 425 326 16 27</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
